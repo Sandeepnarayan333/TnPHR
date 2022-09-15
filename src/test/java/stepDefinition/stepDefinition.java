@@ -23,6 +23,7 @@ public class stepDefinition extends Utils {
 	static String USER_PHR_ROLE;
 	static String 	USER_FACILITY_ID;
 	PayLoad payload = new PayLoad();
+	
 	@Given("Get facility payLoad")
 	
 	public void get_facility_pay_load() throws IOException {
@@ -73,6 +74,27 @@ public class stepDefinition extends Utils {
 	      System.out.println("The UserFacilityId is "+USER_FACILITY_ID);
 	      
 	    }
+	 
+	 
+	 
+	 @When("User adds required payload and calls {string} with {string} http request")
+	 public void user_adds_required_payload_and_calls_with_http_request(String resourceName, String httpMethod) throws IOException {
+	     
+		 get_the_payload_for_steer_aggregate_api();
+		 ApiResources enumResource = ApiResources.valueOf(resourceName);
+			
+		   if(httpMethod.equalsIgnoreCase("POST")) {
+			   
+			response = request.when().post(enumResource.getResource());
+		   }
+		   
+		   else if(httpMethod.equalsIgnoreCase("GET"))
+		   {
+			   
+			   response = request.when().get(enumResource.getResource());
+		   }
+		 
+	 }
 
 	
 //-----------------------------------------------------------------------------------------------------------------------------
@@ -94,7 +116,15 @@ public class stepDefinition extends Utils {
 		 
 	    }
 	
+	//---------------------------------------------------------------------------------------------------------------------------
 	
-	
+	 @Given("Get the payload for steerAggregate Api")
+	 public void get_the_payload_for_steer_aggregate_api() throws IOException {
+		 
+	     
+		 request=given().spec(RequestSpecification()).body(payload.PayLoadForShopStreetAggregator(getGlobalProperties("userid")
+				                                           ,getGlobalProperties("phrrole"), getGlobalProperties("userfacilityid")));
+		 
+	 }
 
 }

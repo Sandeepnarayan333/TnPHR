@@ -1,3 +1,4 @@
+@Validate
 Feature: Validating admin_api_get_facility_master API's
 
 
@@ -20,7 +21,7 @@ Then the API call got success with status code 200
 And "message" in response body is "Success retrieving Facility Data."
 And "status" in response body is "SUCCESS"
 
-
+ 
 Scenario: Verify if Users data is being Successfully retrieved using admin_api_get_user_list API  
 Given Get UserList payLoad
 When user calls "getUserList" with "POST" http request
