@@ -26,12 +26,12 @@ import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import tech.grasshopper.filter.ExtentRestAssuredFilter;
+
 
 public class Utils {
 	int  rowCount = 0;
 	JsonPath js;
-	String baseUrl = System.getProperty("baseUrl");  // Should send the base url from CLI
+    public static String baseUrl = System.getProperty("baseUrl");  // Should send the base url from CLI
 	public static RequestSpecification requestBase; // If we don't make it static for each run requestBase will be
 													// considered
 	// null for each run..and logging will be replaced each time.

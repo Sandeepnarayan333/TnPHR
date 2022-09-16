@@ -21,12 +21,13 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/x
   </properties>
  
   <build>
- <resources>
- <resource>
+  
+ <testResources>
+ <testResource>
  <directory>src/test/java/resources</directory>
  <filtering>true</filtering>
- </resource>
- </resources>
+ </testResource>
+ </testResources>
 
 
  
@@ -169,39 +170,6 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/x
     <artifactId>mysql-connector-java</artifactId>
     <version>8.0.30</version>
 </dependency>
-
-
-
-<!-- https://mvnrepository.com/artifact/tech.grasshopper/rest-assured-extent-junit4 -->
-<dependency>
-    <groupId>tech.grasshopper</groupId>
-    <artifactId>rest-assured-extent-junit4</artifactId>
-    <version>1.0.0</version>
-</dependency>
-
-<!-- https://mvnrepository.com/artifact/tech.grasshopper/extent-allure-rest-assured -->
-<dependency>
-    <groupId>tech.grasshopper</groupId>
-    <artifactId>extent-allure-rest-assured</artifactId>
-    <version>1.0.1</version>
-</dependency>
-
-<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-junit4 -->
-<dependency>
-    <groupId>io.qameta.allure</groupId>
-    <artifactId>allure-junit4</artifactId>
-    <version>2.19.0</version>
-    <scope>test</scope>
-</dependency>
-
-<!-- https://mvnrepository.com/artifact/tech.grasshopper/allure-cucumber-mapping-plugin -->
-<dependency>
-    <groupId>tech.grasshopper</groupId>
-    <artifactId>allure-cucumber-mapping-plugin</artifactId>
-    <version>1.1.1</version>
-</dependency>
-
-
 
  <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
 <dependency>
